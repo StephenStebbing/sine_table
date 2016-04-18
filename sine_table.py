@@ -105,7 +105,7 @@ class SineTable(object):
                 print
                 count = 0
 
-        print '}'
+        print '};'
         if h_guard:
             print '#endif // ', hgn
 
@@ -115,8 +115,8 @@ def main():
 
     # process command line arguments
     argp = argparse.ArgumentParser()
-    argp.add_argument('-ne', '--num_entries', help="Number of entries in the table. Default 256", default=256)
-    argp.add_argument('-nb', '--num_bits', default=8, help="Number of bits in the entry values. Default 8")
+    argp.add_argument('-ne', '--num_entries', help="Number of entries in the table. Default 256", default=256, type=int)
+    argp.add_argument('-nb', '--num_bits', default=8, help="Number of bits in the entry values. Default 8", type=int)
     argp.add_argument('-v', '--verbose', action='store_true', help="Include comments in the table. Default false", \
                       default=False)
 
